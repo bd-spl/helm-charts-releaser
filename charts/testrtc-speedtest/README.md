@@ -1,4 +1,5 @@
-# Speedtest Helm Chart (this is a bailerplate, everytging is TBD...)
+# Speedtest Helm Chart
+(this is a boilerplate, everytging is TBD...)
 
 * Installs [Speedtest](https://testrtc.com/network-testing/)
 
@@ -49,6 +50,7 @@ You have to add --force to your helm upgrade command as the labels of the chart 
 | `image.sha`                               | Image sha (optional)                          | ``                                                      |
 | `image.pullPolicy`                        | Image pull policy                             | `IfNotPresent`                                          |
 | `image.pullSecrets`                       | Image pull secrets (can be templated)         | `[]`                                                    |
+
 ...
 
 ### Other things
