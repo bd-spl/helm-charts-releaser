@@ -1,13 +1,13 @@
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
-  name: app
+  name: testrtc-speedtest-app
 spec:
   selector:
     matchLabels:
       app: speedtest
       tier: app
-  replicas: 3
+  replicas: {{ .Values.app.replicaCount}}
   template:
     metadata:
       labels:
@@ -15,12 +15,9 @@ spec:
         tier: app
     spec:
       containers:
-      - name: php-redis
+      - name: nettest
         image: "{{ .Values.app.image.name }}:{{ .Values.app.image.tag }}"
-        resources:
-          requests:
-            cpu: 100m
-            memory: 100Mi
+        resources: {{ .Values.app.resources }}
         env:
         - name: GET_HOSTS_FROM
           value: dns
