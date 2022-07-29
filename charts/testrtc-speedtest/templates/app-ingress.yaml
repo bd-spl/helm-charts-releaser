@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: app-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: {{ .Values.app.ingress.staticIpName }}
+  labels:
+    app: speedtest
+    tier: app
+spec:
+  backend:
+    serviceName: app-backend
+    servicePort: {{ .Values.app.service.port }}

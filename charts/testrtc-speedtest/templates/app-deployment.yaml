@@ -1,22 +1,22 @@
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
-  name: frontend
+  name: app
 spec:
   selector:
     matchLabels:
       app: speedtest
-      tier: frontend
+      tier: app
   replicas: 3
   template:
     metadata:
       labels:
         app: speedtest
-        tier: frontend
+        tier: app
     spec:
       containers:
       - name: php-redis
-        image: "{{ .Values.frontend.image.name }}:{{ .Values.frontend.image.tag }}"
+        image: "{{ .Values.app.image.name }}:{{ .Values.app.image.tag }}"
         resources:
           requests:
             cpu: 100m
@@ -33,8 +33,8 @@ spec:
           # uncomment the line below:
           # value: env
         - name: DOCKER_IMAGE_NAME
-          value: {{ .Values.frontend.image.name }}
+          value: {{ .Values.app.image.name }}
         - name: DOCKER_IMAGE_TAG
-          value: {{ .Values.frontend.image.tag }}
+          value: {{ .Values.app.image.tag }}
         ports:
-        - containerPort: {{ .Values.frontend.containerPort }}
+        - containerPort: {{ .Values.app.containerPort }}
