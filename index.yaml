@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  speedtest:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2022-08-01T10:12:00.910124598+02:00"
+    description: A Helm chart for Kubernetes for TestRTC Speed Test
+    digest: dc199c534bf01d60fc9147880448d05855c549a25120ffb1e36a2b11bfd6c2b5
+    name: speedtest
+    urls:
+    - https://github.com/bogdando/helm-charts/releases/download/speedtest-0.1.0/speedtest-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-08-01T10:12:00.910130419+02:00"
