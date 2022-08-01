@@ -37,12 +37,14 @@ cr upload --skip-existing --config ~/.cr.yaml
 
 cr index --pages-index-path index.yaml -i index.yaml -p .cr-release-packages --config ~/.cr.yaml
 ```
-Commit generated `index.yaml` into `gh-pages` branch's root dir.
+Commit generated `index.yaml` and cherry-pick it into `gh-pages` branch's root dir as well.
 ```
-git checkout gh-pages
 mv index.yaml ../../
 git add ../../index.yaml
 git commit -m Index
+git push
+git checkout gh-pages
+git cherry-pick <use the above commit id>
 git push
 ```
 In the helm-charts repo settings for github pages, make sure it is generated
