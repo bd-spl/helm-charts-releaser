@@ -6,7 +6,7 @@
 ## Get Repo Info
 
 ```console
-helm repo add testrtc-speedtest https://bogdando.github.io/helm-charts
+helm repo add testrtc-speedtest https://bd-spl.github.io/helm-charts-releaser
 helm repo update
 ```
 
@@ -17,7 +17,7 @@ _See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation
 To install the chart with the release name `my-release`:
 
 ```console
-helm install my-release bogdando/testrtc-speedtest
+helm install my-release bd-spl/testrtc-speedtest
 ```
 
 ## Uninstalling the Chart

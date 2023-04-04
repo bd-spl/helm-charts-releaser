@@ -1,17 +1,17 @@
-# helm-charts
+# helm-charts-releaser
 
-* [testrtc-speedtest](https://bogdando.github.io/helm-charts/charts/testrtc-speedtest/)
+* [testrtc-speedtest](https://bd-spl.github.io/helm-charts-releaser/charts/testrtc-speedtest/)
 
 ## Releasing a testrtc-speedtest build (if you are John Doe)
 
 Make changes, prepare for a release, poke the version in `Chart.yaml`, commit it.
 It is now ready to build with
 [chart-releaser](https://github.com/helm/chart-releaser), will publish to
-`https://<johndoe>.github.io/helm-charts/charts/testrtc-speedtest/`:
+`https://<johndoe>.github.io/helm-charts-releaser/charts/testrtc-speedtest/`:
 ```
 cat > ~/.cr.yaml << EOF
 owner: johndoe
-git-repo: helm-charts
+git-repo: helm-charts-releaser
 package-path: .cr-release-packages
 # use your valid github API token
 token: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -47,7 +47,7 @@ git checkout gh-pages
 git cherry-pick <use the above commit id>
 git push
 ```
-In the helm-charts repo settings for github pages, make sure it is generated
+In the helm-charts-releaser repo settings for github pages, make sure it is generated
 from the `main` branch, where is README file located. The branch `gh-pages` is
 only needed for chart releaser indexer, and helm CLI to fetch `index.yaml`
 provided with it.
